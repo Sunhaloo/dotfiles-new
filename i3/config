@@ -28,6 +28,6 @@ bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOU
 
 
 bar {
-        # status_command -c ~/.config/i3/configs/i3bar.conf i3status
-        # status_command -c ~/.config/i3/configs/i3bar.conf i3status
+        position top
+        status_command i3status
 }
