@@ -6,21 +6,21 @@
 
 ### i3 System / Desktop Related
 
-- [Nerd Font](https://www.nerdfonts.com/font-downloads) $\Rightarrow$ For Icons
-- [LXInput](https://github.com/lxde/lxinput) $\Rightarrow$ Mouse and Keyboard Configuration
-- [feh](https://github.com/derf/feh) $\Rightarrow$ Wallpaper
-- [autotiling](https://github.com/nwg-piotr/autotiling) $\Rightarrow$ Autotiling for i3 / Sway
-- [polybar](https://github.com/polybar/polybar) $\Rightarrow$ Alternative to i3blocks
-- [maim](https://github.com/naelstrof/maim) $\Rightarrow$ Screenshot Tool
-- [xclip](https://github.com/astrand/xclip) $\Rightarrow$ X11 Clipboard
+- [Nerd Font](https://www.nerdfonts.com/font-downloads) $\rightarrow$ For Icons
+- [LXInput](https://github.com/lxde/lxinput) $\rightarrow$ Mouse and Keyboard Configuration
+- [feh](https://github.com/derf/feh) $\rightarrow$ Wallpaper Selector
+- [autotiling](https://github.com/nwg-piotr/autotiling) $\rightarrow$ Autotiling for i3 / Sway
+- [polybar](https://github.com/polybar/polybar) $\rightarrow$ Alternative to i3blocks
+- [maim](https://github.com/naelstrof/maim) $\rightarrow$ Screenshot Tool
+- [xclip](https://github.com/astrand/xclip) $\rightarrow$ X11 Clipboard
 
 ### Programs
 
-- [Rofi](https://github.com/davatorium/rofi) $\Rightarrow$ Application Launcher
-- [Kitty](https://github.com/kovidgoyal/kitty) $\Rightarrow$ Terminal Emulator
-- [VS Codium](https://github.com/VSCodium/vscodium) $\Rigtharrow$ IDE
-- [Thorium](https://github.com/Alex313031/thorium) $\Rightarrow$ Web Browser
-- [Thunar](https://wiki.archlinux.org/title/Thunar) $\Rightarrow$ File Manager
+- [Rofi](https://github.com/davatorium/rofi) $\rightarrow$ Application Launcher
+- [Kitty](https://github.com/kovidgoyal/kitty) $\rightarrow$ Terminal Emulator
+- [VS Codium](https://github.com/VSCodium/vscodium) $\rightarrow$ IDE
+- [Thorium](https://github.com/Alex313031/thorium) $\rightarrow$ Web Browser
+- [Thunar](https://wiki.archlinux.org/title/Thunar) $\rightarrow$ File Manager
 
 >[!note]
 >You will need to have these folders / directories setup:
