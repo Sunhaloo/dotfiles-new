@@ -2,6 +2,8 @@
 include $HOME/.config/i3/configs/keybindings.conf
 include $HOME/.config/i3/configs/workspaces.conf
 include $HOME/.config/i3/configs/appearance.conf
+include $HOME/.config/i3/themes/onedark.conf
+# include $HOME/.config/i3/configs/i3bar.conf
 
 # remove mouse acceleration ( mouse, touchpad, pointer )
 exec_always for id in $(xinput list | grep "pointer" | cut -d '=' -f 2 | cut -f 1); do xinput --set-prop $id 'libinput Accel Profile Enabled' 0, 1; done
@@ -11,8 +13,8 @@ exec_always for id in $(xinput list | grep "pointer" | cut -d '=' -f 2 | cut -f 
 exec --no-startup-id dex --autostart --environment i3
 
 # resolution ( uncomment to select proper resolution )
-# exec --no-startup-id xrandr --output HDMI-0 --mode 1920x1080
-exec --no-startup-id xrandr --output HDMI-0 --mode 1366x768
+exec --no-startup-id xrandr --output HDMI-0 --mode 1920x1080
+# exec --no-startup-id xrandr --output HDMI-0 --mode 1366x768
 
 # NetworkManager ( to manage wireless networks )
 exec --no-startup-id nm-applet
@@ -26,5 +28,6 @@ bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOU
 
 
 bar {
-        status_command i3status
+        # status_command -c ~/.config/i3/configs/i3bar.conf i3status
+        # status_command -c ~/.config/i3/configs/i3bar.conf i3status
 }
