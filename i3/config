@@ -3,7 +3,6 @@ include $HOME/.config/i3/configs/keybindings.conf
 include $HOME/.config/i3/configs/workspaces.conf
 include $HOME/.config/i3/configs/appearance.conf
 include $HOME/.config/i3/themes/onedark.conf
-# include $HOME/.config/i3/configs/i3bar.conf
 
 # remove mouse acceleration ( mouse, touchpad, pointer )
 exec_always for id in $(xinput list | grep "pointer" | cut -d '=' -f 2 | cut -f 1); do xinput --set-prop $id 'libinput Accel Profile Enabled' 0, 1; done
@@ -26,8 +25,12 @@ bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
 bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
 
+# default i3status bar / i3block ( bar )
+# bar {
+#         position top
+#         status_command i3status
+#         status_command i3block
+# }
 
-bar {
-        position top
-        status_command i3status
-}
+# polybar
+exec_always --no-startup-id ~/.config/polybar/launch.sh &
