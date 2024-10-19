@@ -1,12 +1,10 @@
-# include the keybindings config file
-include $HOME/.config/i3/keybindings.conf
-include $HOME/.config/i3/workspaces.conf
+# include the config files
+include $HOME/.config/i3/configs/keybindings.conf
+include $HOME/.config/i3/configs/workspaces.conf
+include $HOME/.config/i3/configs/appearance.conf
 
 # remove mouse acceleration ( mouse, touchpad, pointer )
 exec_always for id in $(xinput list | grep "pointer" | cut -d '=' -f 2 | cut -f 1); do xinput --set-prop $id 'libinput Accel Profile Enabled' 0, 1; done
-
-# font for window titles, i3status, i3bar
-font pango:IosevkaNerdFont-Regular 10
 
 # autostarts applications ( found in `~/.config/autostart` )
 # used for things like firewalls and input devices settings
