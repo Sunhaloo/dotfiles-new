@@ -34,3 +34,6 @@ bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOU
 
 # polybar
 exec_always --no-startup-id ~/.config/polybar/launch.sh &
+
+# start autotiling
+exec_always --no-startup-id autotiling
