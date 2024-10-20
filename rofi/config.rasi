@@ -1,0 +1,12 @@
+configuration{
+	
+	display-drun: "Packages";
+	display-run: "Commands";
+	display-window: "Window";
+	drun-display-format: "{icon} {name}";
+	show-icons: true;
+	modi: "run,drun,emoji";
+
+}
+
+@theme "~/.config/rofi/themes/one_dark.rasi"
