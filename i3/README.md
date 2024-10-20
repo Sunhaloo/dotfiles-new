@@ -7,6 +7,8 @@
 ### i3 System / Desktop Related
 
 - [Nerd Font](https://www.nerdfonts.com/font-downloads) $\rightarrow$ For Icons
+    - Iosevka Nerd Font
+    - Jet Brains Nerd Font
 - [LXInput](https://github.com/lxde/lxinput) $\rightarrow$ Mouse and Keyboard Configuration
 - [feh](https://github.com/derf/feh) $\rightarrow$ Wallpaper
 - [autotiling](https://github.com/nwg-piotr/autotiling) $\rightarrow$ Autotiling for i3 / Sway
