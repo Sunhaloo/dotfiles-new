@@ -1,7 +1,7 @@
 configuration{
 	
-	display-drun: "Packages";
-	display-run: "Commands";
+	display-drun: " ";
+	display-run: " ";
 	display-window: "Window";
 	drun-display-format: "{icon} {name}";
 	show-icons: true;

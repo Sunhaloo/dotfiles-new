@@ -1,43 +1,39 @@
 /*
  * ROFI One Dark
- *
  * Based on OneDark.vim (https://github.com/joshdick/onedark.vim)
- *
  * Author: Benjamin Stauss
- * User: me-benni
- *
+ * Modified By: S.Sunhaloo
  */
-
 
 * {
   black:      #000000;
-  red:        #eb6e67;
-  green:      #95ee8f;
-  yellow:     #f8c456;
-  blue:       #6eaafb;
-  mangenta:   #d886f3;
-  cyan:       #6cdcf7;
+  red:        #e55561;
+  green:      #8ebd6b;
+  yellow:     #e5c07b;
+  blue:       #4fa6ed;
+  mangenta:   #bf68d9;
+  cyan:       #48b0bd;
   emphasis:   #50536b;
-  text:       #dfdfdf;
-  text-alt:   #b2b2b2;
+  text:       #dcddde;
+  text-alt:   #a9abac;
   fg:         #abb2bf;
-  bg:         #282c34;
+  bg:         #1f2329;
 
   spacing: 0;
   background-color: transparent;
 
-  font: "Knack Nerd Font 14";
+  font: "JetBrainsMonoNerdFont 14";
   text-color: @text;
 }
 
 window {
   transparency: "real";
   fullscreen: true;
-  background-color: #282c34dd;
+  background-color: transparent;
 }
 
 mainbox {
-  padding: 30% 30%;
+  padding: 25% 35%;
 }
 
 inputbar {
@@ -51,12 +47,12 @@ prompt {
 
 textbox-prompt-colon {
   expand: false;
-  str: ":";
   text-color: @text-alt;
 }
 
 entry {
   margin: 0px 10px;
+  text-color: @yellow;
 }
 
 listview {
@@ -69,7 +65,7 @@ element {
   padding: 5px;
   text-color: @text-alt;
   highlight: bold #95ee8f; /* green */
-  border-radius: 3px;
+  border-radius: 15px;
 }
 
 element selected {
@@ -87,7 +83,7 @@ element active, element selected active {
 
 message {
   padding: 5px;
-  border-radius: 3px;
+  border-radius: 15px;
   background-color: @emphasis;
   border: 1px;
   border-color: @cyan;
