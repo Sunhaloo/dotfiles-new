@@ -20,6 +20,7 @@
 ### Programs
 
 - [Rofi](https://github.com/davatorium/rofi) $\rightarrow$ Application Launcher
+    - [rofi-emoji](https://github.com/Mange/rofi-emoji) $\rightarrow$ Emoji Selector from Rofi
 - [Kitty](https://github.com/kovidgoyal/kitty) $\rightarrow$ Terminal Emulator
 - [VS Codium](https://github.com/VSCodium/vscodium) $\rigtharrow$ IDE
 - [Thorium](https://github.com/Alex313031/thorium) $\rightarrow$ Web Browser
