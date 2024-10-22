@@ -21,6 +21,7 @@ display_slowmo() {
     printf "\n\n"
 }
 
+
 # create a function for changing font
 change_font() {
     printf "\nChange Font\n"
@@ -31,34 +32,6 @@ change_font() {
 
     # ask the user for option
     read -p "Please Enter Option: " user_font
-
-    # conditions
-    # JetBrainsMono Nerd Font
-    if [ "$user_font" = 1 ]; then
-        pass
-    # Iosevka Nerd Font Mono
-    elif [ "$user_font" = 2 ]; then
-        pass
-    else
-        printf "\n"
-        display_slowmo "Wrong Option"
-    fi
-
-}
-
-# create a function for changing font
-change_font_chat() {
-    printf "\nChange Font\n"
-
-    # displays the options to the user
-    printf "\nOption [1]: JetBrainsMono Nerd Font"
-    printf "\nOption [2]: Iosevka Nerd Font Mono\n\n"
-
-    # ask the user for option
-    read -p "Please Enter Option: " user_font
-
-    # path to kitty configuration file
-    kitty_conf="$HOME/.config/kitty/kitty.conf"
 
     # conditions
     # JetBrainsMono Nerd Font
@@ -82,7 +55,13 @@ change_font_chat() {
 
 # create a function to change font size
 change_font_size() {
-    printf "\nChange Font Size\n"
+    printf "\n"
+
+    # ask the user to enter the font size
+    read -p "Please Enter Font Size: " user_font_size
+
+
+
 }
 
 # create a function for changing background opacity
@@ -106,7 +85,8 @@ if [ -d "$kitty_dir" ]; then
         # display the options
         printf "\nOption [1]: Change Font"
         printf "\nOption [2]: Change Font Size"
-        printf "\nOption [3]: Change Background Opacity\n\n"
+        printf "\nOption [3]: Change Background Opacity"
+        printf "\nOption [4]: Exit Script\n\n"
 
         # ask the user what option he wants to choose
         read -p "Please Select an Option: " user_option
@@ -114,17 +94,21 @@ if [ -d "$kitty_dir" ]; then
         # user wants to change font
         if [ "$user_option" = 1 ]; then
             # call the function to change font
-            change_font_chat
+            change_font
 
         # user wants to change font size
         elif [ "$user_option" = 2 ]; then
             # call the function to change font size
             change_font_size
 
-        # user wants to chagne background opacity
+        # user wants to change background opacity
         elif [ "$user_option" = 3 ]; then
             # call the function to change font
             change_bg_opacity
+        # user wants to exit the script
+        elif [ "$user_option" = 4 ]; then
+            # call the function to change font
+            exit 0
 
         # if the user enter something else
         else
