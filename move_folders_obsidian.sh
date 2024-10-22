@@ -34,19 +34,23 @@ obsidian_github() {
 printf "\nObsidian Vault Folder Move Script\n"
 
 printf "\nOption [1]: Move From Obsidian to GitHub"
-printf "\nOption [2]: Move From GitHub to Obsidian\n\n"
+printf "\nOption [2]: Move From GitHub to Obsidian"
+printf "\nOption [3]: Exit Script\n\n"
 
 # ask the user to enter option
 read -p "Please Enter Option: " user_option
 
-if [ $user_option -eq 1 ]; then
+if [ "$user_option" = 1 ]; then
     printf "\nMoving From '%s' to '%s'\n" "$obsidian" "$github"
-    # call the function
+    # call the function ( Obsidian ---> GitHub )
     obsidian_github
-elif [ $user_option -eq 2 ]; then
+elif [ "$user_option" = 2 ]; then
     printf "\nMoving From '%s' to '%s'\n" "$github" "$obsidian"
+    # call the function ( GitHub ---> Obsidian )
     github_obsidian
-
+elif [ "$user_option" = 3 ]; then
+    # exit the program
+    exit 0
 else
     printf "\nWrong Input\n"
 fi
