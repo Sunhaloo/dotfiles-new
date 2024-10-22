@@ -54,9 +54,9 @@ change_font() {
 
 # create a function to change font size
 change_font_size() {
-    printf "\n"
+    printf "\nChange Font Size\n"
 
-    # ask the user to enter the font size
+    # ask the user for option
     read -p "Please Enter Font Size: " user_font_size
 
     # change the font size
@@ -67,7 +67,25 @@ change_font_size() {
 
 # create a function for changing background opacity
 change_bg_opacity() {
-    printf "\nChange Opacity\n"
+    printf "\nChange Background Opacity\n"
+
+    # displays the options to the user
+    printf "\nOption [1]: Opaque"
+    printf "\nOption [2]: Enable Transparency\n\n"
+
+    # ask the user for option
+    read -p "Please Enter Option: " user_bg_opacity
+
+    if [ "$user_bg_opacity" = 1 ]; then
+        sed -i 's/^background_opacity\s\+[0-1]\{1\}\+\.[0-9]\{1\}\+/background_opacity 1.0/' "$kitty_conf"
+        printf "\nChange Background Opacity To Opaque"
+    elif [ "$user_bg_opacity" = 2 ]; then
+        sed -i 's/^background_opacity\s\+[0-1]\{1\}\+\.[0-9]\{1\}\+/background_opacity 0.7/' "$kitty_conf"
+        printf "\nChange Background Opacity To Desired Transparency"
+    else
+        printf "\n"
+        display_slowmo "Wrong Option"
+    fi
 }
 
 # main program
