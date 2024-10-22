@@ -1,0 +1,113 @@
+{
+    // Editor Related
+    // allow opening untrusted files
+    "security.workspace.trust.untrustedFiles": "open",
+    // no need to confirm deletion of files
+    "explorer.confirmDelete": false,
+    // does not start up anything from previous session ( I think )
+    "workbench.startupEditor": "none",
+    // enable hover ( information on hover )
+    "editor.hover.enabled": true,
+    // sets the delay for the hover ( time for information to appear on hover )
+    "editor.hover.delay": 1750,
+    // remove the annoying lightbulb icon
+    "editor.lightbulb.enabled": "off",
+    // will only highlight the brakets that we are on ( like in neovim configuration )
+    "editor.matchBrackets": "near",
+    // zoom level of editor
+    "window.zoomLevel": 0,
+    // change the zoom level with mouse wheel
+    "editor.mouseWheelZoom": true,
+    // icon theme
+    "workbench.iconTheme": "material-icon-theme",
+    // changes colour of some icon themes
+    "material-icon-theme.files.color": "#42a5f5",
+    // disables the status bar ( down below )
+    "workbench.statusBar.visible": true,
+    // moves the activity bar at the top
+        // set to "hidden" to hide it completely
+    "workbench.activityBar.location": "top",
+    // disables the minimal
+    "editor.minimap.enabled": false,
+    // guides for indentitation
+    "editor.guides.indentation": true,
+    // enables relative line numbers ( for vim use)
+        // set to "off" to hide the line numbers for minimal look
+    "editor.lineNumbers": "relative",
+    // enables smooth animation for cursor
+    "editor.cursorSmoothCaretAnimation": "on",
+    
+    // Fonts
+    // main fonts
+    "editor.fontFamily": "JetBrainsMono Nerd Font",
+    // font size
+    "editor.fontSize": 20,
+    // for ligatures ( trying it for now )
+    "editor.fontLigatures": true,
+    // terminal fonts
+    "terminal.integrated.fontFamily": "Iosevka Nerd Font",
+    // terminal font size
+    "terminal.integrated.fontSize": 18,
+
+    // Vim Motions ( Vim Extension )
+
+    // Vim Keybinding
+
+    // Normal Mode
+    "vim.normalModeKeyBindings": [
+    // Select All with `Ctrl + A`
+        {
+            "before":["<c-a>"],
+            "after":["g", "g", "V", "G",]
+        },
+        // Use `Ctrl + S` to save
+        {
+            "before": ["<c-s>"],
+            "commands": [":w"]
+        },
+        // Toggle Boolean's keybindings
+        {
+            "before": ["leader", "i"],
+            "commands": ["extension.toggleBool"],
+        },
+    ],
+
+    // Insert Mode
+    "vim.insertModeKeyBindings": [
+        // Enter Normal Mode with `jk`
+        {
+            "before":["j", "k"],
+            "after":["<Esc>"]
+        },
+        // similar to my vim keybindings
+        // be able to hold <Ctrl>+ HJKL to move cursor around in Insert Mode
+        {
+            "before":["<c-j>"],
+            "after":["<Down>"]
+        },
+        {
+            "before":["<c-k>"],
+            "after":["<Up>"]
+        },
+        {
+            "before":["<c-h>"],
+            "after":["<Left>"]
+        },
+        {
+            "before":["<c-l>"],
+            "after":["<Right>"]
+        },
+    ],
+
+    // Vim General Quality of Life changes
+    "vim.hlsearch": false,
+    "vim.foldfix": true,
+    "vim.useSystemClipboard": true,
+    "vim.highlightedyank.enable": true,
+
+    // Vim Leader
+    "vim.leader": "<space>",
+    "window.customTitleBarVisibility": "auto",
+    "workbench.colorTheme": "One Dark Pro Darker"
+
+}
