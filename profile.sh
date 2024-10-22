@@ -46,8 +46,10 @@ change_font() {
         sed -i 's/^font_family\s\+family="JetBrainsMono Nerd Font"/font_family      family="Iosevka Nerd Font Mono"/' "$kitty_conf"
         printf "\nFont changed to Iosevka Nerd Font Mono\n"
     
+    # if the user inputs something else
     else
         printf "\n"
+        # call the function to display in slow motion
         display_slowmo "Wrong Option"
     fi
 }
@@ -59,10 +61,14 @@ change_font_size() {
     # ask the user for option
     read -p "Please Enter Font Size: " user_font_size
 
-    # change the font size
+    # change the font size to desired size
     sed -i "s/^font_size\s\+[1-3]\{1\}[0-9]\{1\}\.[0-9]\{1\}$/font_size $user_font_size/" "$kitty_conf"
 
+    # outputs the confirmation message
     printf "\nFont size changed to $user_font_size\n"
+
+    # NOTE: there is not "exception handling" for strings here...
+    # now I am thinking about it... SHIT!
 }
 
 # create a function for changing background opacity
@@ -76,27 +82,34 @@ change_bg_opacity() {
     # ask the user for option
     read -p "Please Enter Option: " user_bg_opacity
 
+
+    # if the users wants complete opacity / opaque
     if [ "$user_bg_opacity" = 1 ]; then
+        # change the background opacity to 1
         sed -i 's/^background_opacity\s\+[0-1]\{1\}\+\.[0-9]\{1\}\+/background_opacity 1.0/' "$kitty_conf"
         printf "\nChange Background Opacity To Opaque"
+    # if the user wants to "enable" transparency
     elif [ "$user_bg_opacity" = 2 ]; then
+        # change the background opacity to 0.7
         sed -i 's/^background_opacity\s\+[0-1]\{1\}\+\.[0-9]\{1\}\+/background_opacity 0.7/' "$kitty_conf"
         printf "\nChange Background Opacity To Desired Transparency"
+    # if the user enters somethings else
     else
         printf "\n"
+        # call the function to display in slow motion
         display_slowmo "Wrong Option"
     fi
 }
 
 # main program
-
 printf "\n"
 
-# check if the file at that path exists
+# check if the directory exists
 if [ -d "$kitty_dir" ]; then
     # call the function to display in slow motion
     display_slowmo "$dir_exists"
 
+    # check if the configuration file exists
     if [ -e "$kitty_conf" ]; then
         # call the function to display in slow motion
         display_slowmo "$conf_exists"
@@ -132,13 +145,16 @@ if [ -d "$kitty_dir" ]; then
         # if the user enter something else
         else
             printf "\n"
+            # call the function to display in slow motion
             display_slowmo "Wrong Option"
         fi
 
+    # if the configuration file is not found
     else
         printf "\nKitty Configuration File Not Found\n"
     fi
 
+# if the kitty directory is not found
 else
     printf "\nKitty Directory Not Found\n"
 fi
