@@ -1,0 +1,19 @@
+{
+	// theme related settings - One Dark theme
+	// install from Package Install
+	"color_scheme": "Packages/Theme - One Dark/One Dark.tmTheme",
+	"theme": "One Dark.sublime-theme",
+	// enable animations
+	"animation_enabled": true,
+	// fonts settings
+	"font_face": "JetBrainsMono Nerd Font",
+	"font_size": 18,
+	// enable vim mode
+	"ignored_packages": [
+	],
+	"vintage_start_in_command_mode": true,
+	"vintage_use_clipboard": true,
+	// use relative line numbers
+	"relative_line_numbers": true,
+	"index_files": true,
+}
