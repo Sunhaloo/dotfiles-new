@@ -52,7 +52,6 @@ change_font() {
     fi
 }
 
-
 # create a function to change font size
 change_font_size() {
     printf "\n"
@@ -60,8 +59,10 @@ change_font_size() {
     # ask the user to enter the font size
     read -p "Please Enter Font Size: " user_font_size
 
+    # change the font size
+    sed -i "s/^font_size\s\+[1-3]\{1\}[0-9]\{1\}\.[0-9]\{1\}$/font_size $user_font_size/" "$kitty_conf"
 
-
+    printf "\nFont size changed to $user_font_size\n"
 }
 
 # create a function for changing background opacity
