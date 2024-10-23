@@ -10,16 +10,17 @@ display_options() {
 }
 
 # create a function to install Oh-My-Zsh
-zsh_plugins() {
-    # basically taken from GitHub
+install_ohmyzsh() {
+    printf "\n\nInstalling Oh-My-Zsh\n\n"
+    # copied from the website ---> install zsh
     sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
     printf "\n\nInstalling Zsh Plugins\n\n"
-
-    # clone the required zsh plugins
+    # install zsh-autosuggestions and zsh-syntax-highlighting
     git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
     git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 }
+
 
 # create a function to delete and create files / folders
 delete_make_files() {
@@ -37,6 +38,7 @@ delete_make_files() {
     mkdir -p ~/OBS\ Studio/
     mkdir -p ~/Obsidian/
 }
+
 
 # create a function to handle manipulation of folders in dotfiles
 dotfiles_manipulation() {
@@ -74,8 +76,8 @@ dotfiles_manipulation() {
 
     # copy folders from dotfiles to `~/.config`
     cp -r ~/GitHub/dotfiles-new/nvim ~/.config/
-
 }
+
 
 # first of all; run `git.sh` ( no matter what )
 # check if the file exists
@@ -158,15 +160,7 @@ elif [ "$user_option" = 2 ]; then
     # install required packages from the AUR
     install_yay_package vscodium-bin thorium-browser-bin sublime-text-4 bibata-cursor-theme oh-my-posh
 
-    printf "\n\nInstalling Oh-My-Zsh\n\n"
-
-    # basically taken from GitHub
-    sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-
-    printf "\n\nInstalling Zsh Plugins\n\n"
-
-    # call the function to install Oh-My-Zsh
-    zsh_plugins
+    install_ohmyzsh
 
 # if the user selects to make the folders and stuff
 elif [ "$user_option" = 3 ]; then
@@ -177,7 +171,6 @@ elif [ "$user_option" = 3 ]; then
 
     # call the function to move clone dotfiles and move folders
     dotfiles_manipulation
-
 
     # NOTE: I use Endeavour OS with i3 WM ( installing from calamares installer )
     # hence, I delete the packages that I dont' need
