@@ -108,6 +108,10 @@ alias remove='sudo pacman -R'
 alias update='sudo pacman -Syu'
 # clean system packages
 alias clean='sudo pacman -Rns $(pacman -Qdtq)'
+# clean system logs
+alias clean_plog='sudo truncate -s 0 /var/log/pacman.log'
+# clean journalctl logs
+alias clean_jlog='sudo journalctl --vacuum-size=0'
 
 # System ( Debian / Debian Based Distributions )
 # search for applications ---> provide application / package name
