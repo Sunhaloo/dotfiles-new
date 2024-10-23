@@ -10,12 +10,13 @@ display_options() {
 }
 
 # create a function to install Oh-My-Zsh
-oh_my_zsh() {
+zsh_plugins() {
     # basically taken from GitHub
     sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
     printf "\n\nInstalling Zsh Plugins\n\n"
 
+    # clone the required zsh plugins
     git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
     git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 }
@@ -24,6 +25,7 @@ oh_my_zsh() {
 delete_make_files() {
     # call the function to delete existing file and folders
     printf "\nDeleting Existing Files & Folders\n\n"
+
     # remove "existing" folders
     rm -rf ~/GitHub
     rm -rf ~/OBS\ Studio/
@@ -39,6 +41,7 @@ delete_make_files() {
 # create a function to handle manipulation of folders in dotfiles
 dotfiles_manipulation() {
     printf "\nCloning Folder from GitHub\n\n"
+
     # clone my dotfiles repository
     git clone https://github.com/Sunhaloo/dotfiles-new ~/GitHub/dotfiles-new
 
@@ -98,10 +101,16 @@ read -p "Please Enter An Option: " user_option
 
 # Function to check and install packages
 install_package() {
+    # for each package in the "line" of package "input"
     for package in "$@"; do
+        # if the package is already installed
+        # send the output / message to the "Black Hole"
         if pacman -Qs "$package" > /dev/null; then
+            # output the approriate message
             echo "$package is already installed."
+        # if the package has not been found
         else
+            # install the package ( using pacman without needing to press 'Y' )
             echo "Installing $package..."
             sudo pacman -S --noconfirm "$package"
         fi
@@ -110,10 +119,16 @@ install_package() {
 
 # Function to check and install AUR packages
 install_yay_package() {
+    # for each package in the "line" of package "input"
     for package in "$@"; do
+        # if the package is already installed
+        # send the output / message to the "Black Hole"
         if yay -Qs "$package" > /dev/null; then
+            # output the approriate message
             echo "$package is already installed."
+        # if the package has not been found
         else
+            # install the package ( using yay without needing to press 'Y' )
             echo "Installing $package..."
             yay -S --noconfirm "$package"
         fi
@@ -125,10 +140,10 @@ install_yay_package() {
 if [ "$user_option" = 1 ]; then
     printf "\nInstalling Drivers and Tools + Misc Packages\n\n"
 
-    # update the system ( press 'Y' for us with `--noconfirm` )
+    # update the system ( without the need to press 'Y' )
     sudo pacman -Syu --noconfirm
     # install required packages from lovely pacman
-    install_package i3 git kitty lxinput feh maim xclip ldns thunar-volman gvfs gvfs-afc gufw gcc clang python-requests nodejs npm rustup lua openjdk21-src ffmpeg ripgrep fd zoxide fzf eza rofi-emoji mypaint btop brightnessctl neovim lazygit
+    install_package i3 git kitty lxinput feh maim xclip ldns thunar-volman gvfs gvfs-afc gufw gcc clang python-requests nodejs npm rustup lua openjdk21-src ffmpeg ripgrep fd zoxide fzf eza rofi-emoji mypaint btop brightnessctl neovim lazygit p7zip
     # install required packages from the AUR
     install_yay_package intel-ivsc-firmware nwg-look
 
@@ -151,7 +166,7 @@ elif [ "$user_option" = 2 ]; then
     printf "\n\nInstalling Zsh Plugins\n\n"
 
     # call the function to install Oh-My-Zsh
-    oh_my_zsh
+    zsh_plugins
 
 # if the user selects to make the folders and stuff
 elif [ "$user_option" = 3 ]; then
