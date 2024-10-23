@@ -12,10 +12,11 @@ then
 # if git is not installed
 else
     printf "\nGit is not installed. Installing Git...\n\n"
+    # install git
     sudo pacman -S git
 fi
 
-# Ask the user to enter username and email
+# read the user's email and name
 read -p "Please Enter Your Email: " user_email
 read -p "Please Enter Your Username: " user_name
 
@@ -28,5 +29,7 @@ git config --global init.defaultBranch main
 # list the configurations
 git config --list
 
+# successfully configured git
 printf "\n\nGit Configuration Completed.\n" || \
+# if something fails
 printf "\n\nGit Configuration Failed.\n"
