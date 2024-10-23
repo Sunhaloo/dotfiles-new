@@ -145,7 +145,7 @@ if [ "$user_option" = 1 ]; then
     # update the system ( without the need to press 'Y' )
     sudo pacman -Syu --noconfirm
     # install required packages from lovely pacman
-    install_package i3 git kitty lxinput feh maim xclip ldns thunar-volman gvfs gvfs-afc gufw gcc clang python-requests nodejs npm rustup lua openjdk21-src ffmpeg ripgrep fd zoxide fzf eza rofi-emoji mypaint btop brightnessctl neovim lazygit p7zip
+    install_package i3 autotiling picom polybar zsh git kitty lxinput feh maim xclip ldns thunar-volman gvfs gvfs-afc gufw gcc clang python-requests nodejs npm rustup lua openjdk21-src ffmpeg ripgrep fd zoxide fzf eza rofi-emoji mypaint btop brightnessctl neovim lazygit p7zip
     # install required packages from the AUR
     install_yay_package intel-ivsc-firmware nwg-look
 
@@ -156,7 +156,7 @@ elif [ "$user_option" = 2 ]; then
     # update the system ( press 'Y' for us with `--noconfirm` )
     sudo pacman -Syu --noconfirm
     # install required packages from pacman
-    install_package thunar obsidian discord autotiling picom polybar zsh ttf-jetbrains-mono-nerd ttf-iosevka-nerd rofi
+    install_package thunar obsidian discord obs-studio mpv ttf-jetbrains-mono-nerd ttf-iosevka-nerd rofi
     # install required packages from the AUR
     install_yay_package vscodium-bin thorium-browser-bin sublime-text-4 bibata-cursor-theme oh-my-posh
 
