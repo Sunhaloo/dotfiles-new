@@ -13,6 +13,7 @@ exec --no-startup-id dex --autostart --environment i3
 
 # resolution ( uncomment to select proper resolution )
 exec --no-startup-id xrandr --output HDMI-0 --mode 1920x1080
+# uncomment line below if you are using 1366 by 768 displays
 # exec --no-startup-id xrandr --output HDMI-0 --mode 1366x768
 
 # NetworkManager ( to manage wireless networks )
@@ -25,6 +26,7 @@ bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
 bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
 
+# uncomment if you want to use i3status / i3block ( we have polybar )
 # default i3status bar / i3block ( bar )
 # bar {
 #         position top
@@ -32,9 +34,8 @@ bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOU
 #         status_command i3block
 # }
 
-# polybar
+# start polybar
 exec_always --no-startup-id ~/.config/polybar/launch.sh &
 
 # start autotiling
 exec_always --no-startup-id autotiling
-
