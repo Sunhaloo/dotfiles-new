@@ -75,7 +75,7 @@ change_font_size() {
     read -p "Please Enter Font Size: " user_font_size
 
     # change the font size to desired size
-    sed -i "s/^font_size\s\+[1-3]\{1\}[0-9]\{1\}\.[0-9]\{1\}$/font_size $user_font_size/" "$kitty_conf"
+    sed -i "s/^font_size\s\+[0-9]\+\(\.[0-9]\+\)\?$/font_size $user_font_size/" "$kitty_conf"
 
     # outputs the confirmation message
     printf "\nFont size changed to $user_font_size\n"

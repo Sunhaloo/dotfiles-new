@@ -158,7 +158,7 @@ elif [ "$user_option" = 2 ]; then
     # install required packages from pacman
     install_package thunar obsidian discord obs-studio mpv ttf-jetbrains-mono-nerd ttf-iosevka-nerd rofi
     # install required packages from the AUR
-    install_yay_package vscodium-bin thorium-browser-bin sublime-text-4 bibata-cursor-theme oh-my-posh
+    install_yay_package ani-cli vscodium-bin thorium-browser-bin sublime-text-4 bibata-cursor-theme oh-my-posh
 
     install_ohmyzsh
 
