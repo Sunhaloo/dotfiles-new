@@ -14,13 +14,21 @@ install_ohmyzsh() {
     printf "\n\nInstalling Oh-My-Zsh\n\n"
     # copied from the website ---> install zsh
     sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+    printf "\n\nInstalling Oh-My-Zsh Completed\n\n"
 
     printf "\n\nInstalling Zsh Plugins\n\n"
     # install zsh-autosuggestions and zsh-syntax-highlighting
     git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
     git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+    printf "\n\nInstalling Zsh Plugins Completed\n\n"
 }
 
+install_tpm() {
+    printf "\n\nCloning Tmux TPM\n\n"
+    git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+    printf "\n\nCloning Tmux TPM Completed\n\n"
+
+}
 
 # create a function to delete and create files / folders
 delete_make_files() {
@@ -50,16 +58,19 @@ dotfiles_manipulation() {
     printf "\nChecking for Existing Files & Folders\n\n"
 
     # remove "existing" folders
+    rm -rf ~/.config/nano
     rm -rf ~/.config/i3
     rm -rf ~/.config/kitty
     rm -rf ~/.config/ohmyposh
     rm -rf ~/.config/polybar
     rm -rf ~/.config/picom
     rm -rf ~/.config/rofi
-    rm -rf ~/.zshrc
+    rm ~/.zshrc
+    rm ~/.tmux.conf
 
     printf "\nMoving Folders\n\n"
     # copy folders from dotfiles to `~/.config`
+    cp -r ~/GitHub/dotfiles-new/scripts ~/.config/
     cp -r ~/GitHub/dotfiles-new/i3 ~/.config/
     cp -r ~/GitHub/dotfiles-new/kitty ~/.config/
     cp -r ~/GitHub/dotfiles-new/ohmyposh ~/.config/
@@ -67,6 +78,7 @@ dotfiles_manipulation() {
     cp -r ~/GitHub/dotfiles-new/picom ~/.config/
     cp -r ~/GitHub/dotfiles-new/rofi ~/.config/
     cp -r ~/GitHub/dotfiles-new/.zshrc ~/
+    cp -r ~/GitHub/dotfiles-new/.tmux.conf ~/
 
     printf "\nNeovim Configuration\n\n"
 
@@ -145,9 +157,11 @@ if [ "$user_option" = 1 ]; then
     # update the system ( without the need to press 'Y' )
     sudo pacman -Syu --noconfirm
     # install required packages from lovely pacman
-    install_package i3 autotiling picom polybar zsh git kitty lxinput feh maim xclip ldns thunar-volman gvfs gvfs-afc gufw gcc clang python-requests nodejs npm rustup lua openjdk21-src ffmpeg ripgrep fd zoxide fzf eza rofi-emoji mypaint btop brightnessctl neovim lazygit p7zip
+    install_package i3 autotiling picom polybar zsh git kitty lxinput feh maim xclip ldns thunar-volman gvfs gvfs-afc gufw gcc clang python-requests nodejs npm rustup lua openjdk21-src ffmpeg ripgrep fd zoxide fzf eza rofi-emoji mypaint btop brightnessctl neovim lazygit p7zip tmux
     # install required packages from the AUR
     install_yay_package intel-ivsc-firmware nwg-look
+
+    printf "\n\nHave a nice Day!\n\n"
 
 # if the user wants to install the regular applications that I use
 elif [ "$user_option" = 2 ]; then
@@ -160,7 +174,12 @@ elif [ "$user_option" = 2 ]; then
     # install required packages from the AUR
     install_yay_package ani-cli vscodium-bin thorium-browser-bin sublime-text-4 bibata-cursor-theme oh-my-posh
 
+    # install ohmyzsh and zsh plugins
     install_ohmyzsh
+    # install tmux tpm
+    install_tpm
+
+    printf "\n\nHave a nice Day!\n\n"
 
 # if the user selects to make the folders and stuff
 elif [ "$user_option" = 3 ]; then
@@ -178,6 +197,8 @@ elif [ "$user_option" = 3 ]; then
     sudo pacman -R endeavouros-xfce4-terminal-colors
     sudo pacman -R xfce4-terminal
     sudo pacman -R xterm
+
+    printf "\n\nHave a nice Day!\n\n"
 
 # if the user wants to exits the script
 elif [ "$user_option" = 4 ]; then
