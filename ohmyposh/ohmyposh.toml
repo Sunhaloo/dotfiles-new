@@ -84,12 +84,6 @@ console_title_template = '{{ .Shell }} in {{ .Folder }}'
 # lightDark = '#7f848e'
 
 [palette]
-# red = '#e06c75'
-# yellow = '#e5c07b'
-# green = '#98c379'
-# teal = '#56b6c2'
-# blue = '#61afef'
-# lightDark = '#7f848e'
 red = '#e55561'
 yellow = '#e5c07b'
 green = '#8ebd6b'

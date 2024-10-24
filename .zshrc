@@ -69,7 +69,6 @@ source $ZSH/oh-my-zsh.sh
 # - $ZSH_CUSTOM/macos.zsh
 
 # FUNCTIONS
-
 # create a function to source `.zshrc` file
 zsh_src() {
     source ~/.zshrc
@@ -165,7 +164,6 @@ alias cp_GO='cp -r S.Sunhaloo/ Question - Problems - Solutions/ ~/Obsidian/'
 alias cp_OG='cp -r S.Sunhaloo ~/GitHub/obsidian/'
 
 # System - cd / zoxide
-
 # zoxide - smarter 'cd'
 eval "$(zoxide init --cmd cd zsh)"
 
